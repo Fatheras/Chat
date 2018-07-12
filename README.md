@@ -3,7 +3,7 @@ Technologies used:
 
 -express framework. Used earlier, a simple minimalistic framework
 
--socket.io. I didn't use it until this moment, it was necessary to create a real-time application. Has caused most difficulties
+-socket.io. I didn't use it until this moment, it is necessary to create a real-time application. Has caused most difficulties
 
 -ejs. Used earlier, I liked the syntax more than other similar templates
 
