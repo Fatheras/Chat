@@ -9,10 +9,10 @@ Technologies used:
 
 -bootstrap 4.1. Used earlier, in this project was almost not used
 
--jquery library. Used before, a huge toolkit
+-jquery library. Used earlier, a huge toolkit
 
 # How to start
-use git clone to download the application =>
+Use git clone to download the application =>
 use command npm install to install necessary packages =>
 use npm start to start the application.
 

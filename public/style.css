@@ -57,10 +57,6 @@ section#input_zone {
   transform: translateY(-50%);
 }
 
-/*input#username {
-  font-family: 'Comfortaa', sans-serif;
-} */
-
 input#message {
   top: 40%;
   border-radius: 10px;

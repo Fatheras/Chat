@@ -1,43 +1,48 @@
 $(function() {
-  //make connection
-  var socket = io.connect('http://localhost:3000')
+  const socket = io.connect('http://localhost:3000')
+  const message = $("#message")
+  const username = $("#username")
+  const send_message = $("#send_message")
+  const send_username = $("#send_username")
+  const chatroom = $("#chatroom")
+  const feedback = $("#feedback")
+  const input = document.getElementById("message")
 
-  //buttons and inputs
-  var message = $("#message")
-  var username = $("#username")
-  var send_message = $("#send_message")
-  var send_username = $("#send_username")
-  var chatroom = $("#chatroom")
-  var feedback = $("#feedback")
-
-  //Emit message
   send_message.click(function() {
     socket.emit('new_message', {
       message: message.val()
     })
   })
 
-  //Listen on new_message
   socket.on("new_message", (data) => {
+    if (!data.message) {
+      return;
+    }
     feedback.html('');
-    message.val('');
     chatroom.append("<p class='message'>" + data.username + ": " + data.message + "</p>")
   })
 
-  //Emit a username
   send_username.click(function() {
     socket.emit('change_username', {
       username: username.val()
     })
   })
 
-  //Emit typing
   message.bind("keypress", () => {
     socket.emit('typing')
   })
 
-  //Listen on typing
   socket.on('typing', (data) => {
     feedback.html("<p><i>" + data.username + " is typing a message..." + "</i></p>")
   })
+
+  input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      socket.emit('new_message', {
+        message: message.val()
+      })
+    }
+  });
+
 });
