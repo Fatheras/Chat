@@ -1,19 +1,17 @@
 # Chat
 Technologies used:
 
--express framework. Used earlier, a simple minimalistic framework
+-express framework
 
--socket.io. I didn't use it until this moment, it is necessary to create a real-time application. Has caused most difficulties
+-socket.io
 
--ejs. Used earlier, I liked the syntax more than other similar templates
+-ejs
 
--bootstrap 4.1. Used earlier, in this project was almost not used
+-bootstrap 4.1
 
--jquery library. Used earlier, a huge toolkit
+-jquery library
 
 # How to start
 Use git clone to download the application =>
 use command npm install to install necessary packages =>
 use npm start to start the application.
-
-I spent about 12 hours to create this application.
